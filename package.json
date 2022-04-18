@@ -1,0 +1,22 @@
+{
+  "name": "collagen",
+  "version": "1.0.0",
+  "description": "collagen landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonOshurek/collagen.git"
+  },
+  "keywords": [
+    "collagen"
+  ],
+  "author": "Anton Oshurek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonOshurek/collagen/issues"
+  },
+  "homepage": "https://github.com/AntonOshurek/collagen#readme"
+}
