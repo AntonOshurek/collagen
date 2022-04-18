@@ -7,7 +7,7 @@
 
 	@media (max-width: @mobile-width) {
 		flex-direction: column;
-		gap: 25px;
+		gap: 30px;
 	}
 }
 
@@ -17,6 +17,10 @@
 	justify-content: start;
 	gap: 20px;
 	list-style: none;
+
+	@media (max-width: @mobile-width) {
+		flex-direction: column;
+	}
 }
 
 .social-list__item {
@@ -24,11 +28,23 @@
 }
 
 .social-list__link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	padding: 10px 0;
 	text-decoration: none;
 	color: @standart-black;
 	opacity: 0.8;
 	font-size: 17px;
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+.social-list__icon {
+	opacity: 0.5;
 
 	&:hover,
 	&:focus {
