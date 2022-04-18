@@ -1,5 +1,6 @@
+import { mobileMenu } from './modules/mobile-menu';
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('done');
+  mobileMenu();
 });
 

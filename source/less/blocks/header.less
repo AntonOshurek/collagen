@@ -1,24 +1,51 @@
 .header {
+	position: relative;
 	width: 100%;
 	padding: 0 @standart-side-padding;
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	grid-template-rows: 1fr;
-
+	align-self: center;
 	box-shadow:  0px 6px 10px #cccccc
 }
 
 .page-title {
-	padding: @header-top-padding 0;
+	margin-top: @header-top-padding;
 	font-size: 28px;
 	font-family: 'Akshar', sans-serif;
 	font-weight: bold;
 	color: @standart-black;
 	white-space: nowrap;
+
+	@media (max-width: @tablet-width) {
+		margin-top: 22px;
+		font-size: 32px;
+	}
 }
 
 .nav {
-// ???
+	display: flex;
+	align-items: center;
+	justify-content: end;
+
+	@media (max-width: @tablet-width) {
+		flex-direction: column;
+		align-items: end;
+		justify-content: start;
+		gap: 20px;
+	}
+}
+
+.nav__button {
+	display: none;
+	border: none;
+	background-color: transparent;
+
+	@media (max-width: @tablet-width) {
+		display: block;
+		width: 80px;
+		height: 80px;
+	}
 }
 
 .nav__list {
@@ -28,6 +55,18 @@
 	align-items: center;
 	justify-content: end;
 	gap: 20px;
+
+	@media (max-width: @tablet-width) {
+		display: none;
+	}
+
+	&--open {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		height: min-content;
+		padding-bottom: 20px;
+	}
 }
 
 .nav__item {
@@ -39,6 +78,8 @@
 
 .nav__link {
 	height: 100%;
+	font-size: 19px;
+	white-space: nowrap;
 	position: relative;
 	padding: @header-top-padding 10px;
 	display: flex;
@@ -48,6 +89,10 @@
 	color: @standart-black;
 	text-decoration: none;
 	opacity: 0.8;
+
+	@media (max-width: @tablet-width) {
+		font-size: 22px;
+	}
 
 	&--active {
 		opacity: 1;
@@ -93,4 +138,37 @@
 .nav__shopping-cart {
 	width: 35px;
 	height: 35px;
+}
+
+// navigation button animation styles
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
 }
