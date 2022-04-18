@@ -10,14 +10,14 @@ const mobileMenu = () => {
 		navigationIsOpen = false;
 		navList.classList.remove('nav__list--open');
 		navIcon.classList.remove('btn-icon--active');
-		// siteBody.classList.remove('body--scrolloff');
+		siteBody.classList.remove('body--scrolloff');
 	}
 
 	const openNavigation = (evt) => {
 		navigationIsOpen = true;
 		navList.classList.add('nav__list--open');
 		navIcon.classList.add('btn-icon--active');
-		// siteBody.classList.add('body--scrolloff');
+		siteBody.classList.add('body--scrolloff');
 
 		window.addEventListener('resize', (e) => {
 			if (window.screen.width > 800) {
