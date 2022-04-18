@@ -1,3 +1,42 @@
 .footer {
+	padding: 20px;
+	box-shadow:  0px -6px 10px #cccccc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
+	@media (max-width: @mobile-width) {
+		flex-direction: column;
+		gap: 25px;
+	}
+}
+
+.social-list {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 20px;
+	list-style: none;
+}
+
+.social-list__item {
+// ???
+}
+
+.social-list__link {
+	padding: 10px 0;
+	text-decoration: none;
+	color: @standart-black;
+	opacity: 0.8;
+	font-size: 17px;
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+.rights {
+	font-size: 15px;
+	opacity: 0.7;
 }
