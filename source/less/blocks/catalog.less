@@ -31,6 +31,11 @@
 	flex-wrap: wrap;
 	gap: 30px;
 	justify-content: center;
+
+	&--cart {
+		gap: 10px;
+		justify-content: start;
+	}
 }
 
 .catalog__item {
@@ -38,4 +43,7 @@
 	background: #fff;
 	box-shadow:  20px 20px 40px #cecece,
              -20px -20px 40px #f2f2f2;
+	&--cart {
+		width: @product-cart-card-width;
+	}
 }
