@@ -4,7 +4,7 @@
 	width: 100%;
 	max-height: 100%;
 	padding: 0 @standart-side-padding;
-	box-shadow:  0px 6px 10px #cccccc;
+	box-shadow:  0px 6px 10px @header-footer-box-shadow-color;
 	background-color: @standart-white;
 
 	@media (max-width: @tablet-width) {
@@ -98,7 +98,7 @@
 
 .nav__link {
 	height: 100%;
-	font-size: 19px;
+	font-size: @nav-link-text-size;
 	white-space: nowrap;
 	position: relative;
 	padding: @header-top-padding 10px;
@@ -106,12 +106,13 @@
 	justify-content: center;
 	align-items: center;
 
+	font-family: 'Roboto', "Arial", sans-serif;
 	color: @standart-black;
 	text-decoration: none;
 	opacity: 0.8;
 
 	@media (max-width: @tablet-width) {
-		font-size: 22px;
+		font-size: @nav-link-mobile-text-size;
 	}
 
 	&--active {
@@ -124,7 +125,7 @@
 			left: 0;
 			width: 100%;
 			height: 2px;
-			background-color: #cccccc;
+			background-color: @header-footer-box-shadow-color;
 		}
 	}
 
@@ -180,7 +181,7 @@
 .btn-icon__line {
   fill:none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke:#000;
+  stroke: @standart-black;
   stroke-width:5.5;
   stroke-linecap:round;
 }
