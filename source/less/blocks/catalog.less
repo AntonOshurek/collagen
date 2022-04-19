@@ -4,8 +4,9 @@
 }
 
 .offer__title {
-	font-size: 28px;
-	font-weight: bold;
+	font-size: @catalog-offer-title-size;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 	text-transform: capitalize;
 }
 
@@ -18,8 +19,9 @@
 }
 
 .catalog__title {
-	font-size: 28px;
-	font-weight: bold;
+	font-size: @catalog-title-size;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 	text-transform: capitalize;
 }
 
@@ -27,11 +29,13 @@
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 30px;
 	justify-content: center;
 }
 
 .catalog__item {
-	width: 250px;
-	padding: 5px;
+	width: @product-card-width;
+	background: #fff;
+	box-shadow:  20px 20px 40px #cecece,
+             -20px -20px 40px #f2f2f2;
 }
