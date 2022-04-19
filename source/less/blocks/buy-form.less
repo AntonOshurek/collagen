@@ -1,0 +1,27 @@
+.buy-form {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 50px;
+}
+
+.buy-form__fieldset {
+	border: none;
+
+	&--named {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: end;
+		gap: 20px;
+	}
+}
+
+.standart-input {
+
+	&--named {
+		width: 350px;
+		padding: 10px 20px;
+	}
+}
