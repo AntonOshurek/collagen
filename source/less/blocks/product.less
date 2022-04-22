@@ -1,0 +1,49 @@
+.product {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: repeat(3, min-content);
+	grid-template-areas:
+		'title title'
+		'img info'
+		'controls controls'
+	;
+	grid-row-gap: 30px;
+	grid-column-gap: 40px;
+}
+.product__title {
+	grid-area: title;
+}
+
+.product__image {
+	grid-area: img;
+}
+
+.product__info {
+	grid-area: info;
+}
+
+.product__info-title {
+
+}
+
+.product__text {
+
+}
+
+.product__controls {
+	grid-area: controls;
+
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.product__button {
+	min-width: 180px;
+	padding: 20px;
+	border: none;
+	background-color: @standart-black;
+	color: @standart-white;
+	font-size: 17px;
+	font-weight: 300;
+}

@@ -22,7 +22,7 @@
 <body class="body">
 	<header class="header">
 		<div class="header__wrap container">
-			<h1 class="visually-hidden">Collagen BY - Твоя корзина</h1>
+			<h1 class="visually-hidden">Collagen BY - Страница продукта ...</h1>
 			<p class="page-title">Collagen BY</p>
 			<nav class="nav">
 				<h2 class="visually-hidden">Навигация по сайту</h2>
@@ -70,8 +70,23 @@
 	</header>
 
 	<main class="main main--product">
-		<section class="product">
-
+		<section class="product container">
+			<h2 class="product__title">продукт такой то какой то</h2>
+			<img class="product__image" width="400" height="500" src="./img/catalog/Collagen Long Life-1--mini.jpg" alt="">
+			<article class="product__info">
+				<h3 class="product__info-title">информация о продукте</h3>
+				<p class="product__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde fuga molestias consequuntur sit voluptas sint voluptate necessitatibus commodi dolorum exercitationem.</p>
+				<p class="product__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, eligendi!</p>
+				<p class="product__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde fuga molestias consequuntur sit voluptas sint voluptate necessitatibus commodi dolorum exercitationem.</p>
+				<p class="product__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, eligendi!</p>
+			</article>
+			<div class="product__controls">
+				<button class="product__button">добавить в корзину</button>
+				<!-- <button class="product__button" onClick="window.open('https://telegram.me/share/url?url=https:lockalhost.index.html','sharer','status=0,toolbar=0,width=650,height=500');">Поделиться в Telegram</button> -->
+				<!-- <button class="product__button">Поделиться в VK</button> -->
+				<script src="https://yastatic.net/share2/share.js"></script>
+				<div class="ya-share2" data-curtain data-size="l" data-color-scheme="blackwhite" data-services="vkontakte,telegram,whatsapp"></div>
+			</div>
 		</section>
 	</main>
 
