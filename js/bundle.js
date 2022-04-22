@@ -2,6 +2,39 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./source/scripts/modules/cart-icon.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/cart-icon.js ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "replaceCartIcon": function() { return /* binding */ replaceCartIcon; }
+/* harmony export */ });
+const replaceCartIcon = () => {
+  const cartButton = document.querySelector('.product__button');
+  let productInCart = false;
+
+  function replaceIcon(evt) {
+    evt.preventDefault();
+
+    if (productInCart) {
+      productInCart = false;
+      this.classList.remove('product__button--remove-from-cart');
+    } else {
+      productInCart = true;
+      this.classList.add('product__button--remove-from-cart');
+    }
+  }
+
+  cartButton.addEventListener('click', replaceIcon);
+};
+
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/mobile-menu.js":
 /*!***********************************************!*\
   !*** ./source/scripts/modules/mobile-menu.js ***!
@@ -113,9 +146,18 @@ var __webpack_exports__ = {};
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobile-menu */ "./source/scripts/modules/mobile-menu.js");
+/* harmony import */ var _modules_cart_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/cart-icon */ "./source/scripts/modules/cart-icon.js");
+
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_mobile_menu__WEBPACK_IMPORTED_MODULE_0__.mobileMenu)();
+
+  if (document.location.pathname.indexOf('product') > -1) {
+    (0,_modules_cart_icon__WEBPACK_IMPORTED_MODULE_1__.replaceCartIcon)();
+  } // if(document.location.pathname === '/projects.html' || document.location.pathname === '/unicorn__arhitekte/projects.html') {
+  //
+  // }
+
 });
 }();
 /******/ })()
