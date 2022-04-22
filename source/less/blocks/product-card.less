@@ -1,10 +1,17 @@
 .product-card {
 	width: 100%;
 	height: 100%;
+	padding-bottom: 20px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(3, min-content) 1fr;
 	grid-row-gap: 10px;
+
+	&--cart {
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr;
+		padding-bottom: 0;
+	}
 }
 
 .product-card__title {
@@ -13,6 +20,10 @@
 	font-family: 'Roboto', "Arial", sans-serif;
 	font-weight: 500;
 	padding: 0 @product-card-content-padding;
+
+	&--cart {
+		padding: 10px @product-card-content-padding 0 @product-card-content-padding;
+	}
 }
 
 .product-card__description {
@@ -28,6 +39,13 @@
 	width: @product-card-width;
 	height: @product-card-width;
 	overflow: hidden;
+
+	&--cart {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		width: @product-cart-card-img-width-heigth;
+		height: @product-cart-card-img-width-heigth;
+	}
 }
 
 .product-card__img {
@@ -44,16 +62,27 @@
 		transition: @product-card-image-transition;
 	}
 }
-
-.product-card__controls {
-	padding: 0 @product-card-content-padding 15px @product-card-content-padding;
+.product-cart__buy-block {
 	order: 4;
+	padding: 0 @product-card-content-padding;
 	display: flex;
-	justify-content: space-between;
-	align-items: end;
+	flex-direction: column;
+	justify-content: start;
+	gap: 2px;
+}
+
+.product-cart__buy-info {
+	font-size: @product-card-info-text-size;
+	font-family: 'Roboto', "Arial", sans-serif;
+	font-weight: 300;
 }
 
 .product-card__show-info {
+	width: min-content;
+	padding: 0 @product-card-content-padding;
+	display: flex;
+	align-items: center;
+	order: 4;
 	font-size: 17px;
 	font-family: 'Roboto', "Arial", sans-serif;
 	font-weight: 400;
@@ -66,26 +95,4 @@
 	&:focus {
 		color: @standart-black;
 	}
-}
-
-.product-card__to-cart {
-	cursor: pointer;
-	background-color: transparent;
-	border-radius: 8px;
-	text-transform: uppercase;
-	border: none;
-	transition: @basic-animation-transition;
-
-	&:hover,
-	&:focus {
-		.product-card__cart-icon > path {
-			transition: @basic-animation-transition;
-			fill: @standart-black;
-		}
-	}
-}
-
-.product-card__cart-icon > path {
-	transition: all ease-in 0.2s;
-	fill: @product-card-no-focus-color;
 }
