@@ -1,5 +1,5 @@
 import { mobileMenu } from './modules/mobile-menu';
-import { replaceCartIcon } from './modules/cart-icon';
+import { replaceCartIcon } from './modules/add-form';
 
 window.addEventListener('DOMContentLoaded', () => {
   mobileMenu();

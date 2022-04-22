@@ -1,5 +1,6 @@
 // add product to cart form
 .add-form {
+	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(2, min-content);
@@ -9,22 +10,34 @@
 	grid-row-gap: 20px;
 }
 
+.add-form__info {
+	grid-area: radio input;
+}
+
 .add-form__radio-wrap {
 	grid-area: radio;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: start;
+	justify-content: space-between;
 	gap: 10px;
+
+	&--hidden {
+		display: none;
+	}
 }
 
 .add-form__input-wrap {
 	grid-area: input;
+
+	&--hidden {
+		display: none;
+	}
 }
 
 .add-form__radio-label {
 	font-family: 'Open Sans', "Arial", sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 400;
 }
 
@@ -34,7 +47,7 @@
 
 .add-form__num-label {
 	font-family: 'Open Sans', "Arial", sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
