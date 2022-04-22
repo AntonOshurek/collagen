@@ -12,8 +12,19 @@
 		grid-row-gap: 30px;
 	}
 
-	&--cart {
-		display: grid;
+	// &--cart {
+
+	// }
+}
+
+.main__wrap-cart {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr min-content;
+	grid-template-rows: min-content;
+	grid-column-gap: 40px;
+
+	@media (max-width: @tablet-width) {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, min-content);
 		grid-row-gap: 80px;
