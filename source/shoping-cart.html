@@ -72,7 +72,7 @@
 
 	<main class="main main--cart">
 		<section class="cart container">
-			<h2 class="cart__title">Корзина</h2>
+			<h2 class="cart__title">Моя корзина</h2>
 			<p class="cart__count">В корзине <span class="cart__count-info">1 продукт</span></p>
 			<ul class="catalog__list catalog__list--cart">
 				<li class="catalog__item catalog__item catalog__item--cart">
@@ -116,52 +116,14 @@
 				</li>
 			</ul>
 		</section>
-		<button class="show-by-form-btn container" type="button">Заказать</button>
-		<form class="buy-form container" action="#" id="form" name="buy-form" method="POST">
-
-			<fieldset class="buy-form__fieldset">
-        <legend class="">Способ оплаты:</legend>
-        <label class="">
-          <span class="">При получении</span>
-          <input class="" name="payment" value="" type="radio">
-          <span class=""></span>
-        </label>
-				<div>
-					<label class="">
-						<span class="">Оплата картой</span>
-						<input class="" name="payment-on-delivery" value="payment-card" type="radio">
-						<span class=""></span>
-					</label>
-					<label class="">
-						<span class="">Оплата наличными</span>
-						<input class="" name="payment-on-delivery" value="payment-cash" type="radio">
-						<span class=""></span>
-					</label>
-				</div>
-        <label class="">
-          <span class="">ЕРИП</span>
-          <input class="" name="payment" value="" type="radio">
-          <span class=""></span>
-        </label>
-      </fieldset>
-
-			<fieldset class="buy-form__fieldset buy-form__fieldset--named">
-        <legend class="">Представьтесь:</legend>
-        <label class="">
-          ИМЯ*:
-          <input class="standart-input standart-input--named" id="name" type="text" placeholder="Петр" pattern="[a-zA-Zа-яА-Я\s]+" title="только буквы!" required>
-        </label>
-        <label class="">
-          ФАМИЛИЯ*:
-          <input class="standart-input standart-input--named" type="text" placeholder="Иванов" pattern="[a-zA-Zа-яА-Я\s]+" title="только буквы!" required>
-        </label>
-        <label class="">
-          Отчество:
-          <input class="standart-input standart-input--named" type="text" placeholder="Александрович" pattern="[a-zA-Zа-яА-Я\s]+" title="только буквы!" required>
-        </label>
-      </fieldset>
-
-		</form>
+		<section class="cart-info">
+			<h2 class="cart-info__title">Описание заказа</h2>
+			<ul class="cart-info__list">
+				<li class="cart-info__item">Сollagen Long Life - черная смородина желе</li>
+			</ul>
+			<p class="cart-info__sum">Общая сумма: <span>0$</span></p>
+			<button class="cart-info__buy-button" type="button">Оплатить</button>
+		</section>
 	</main>
 
 	<footer class="footer">
