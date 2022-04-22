@@ -12,6 +12,9 @@
 }
 .product__title {
 	grid-area: title;
+	font-family: 'Roboto', "Arial", sans-serif;
+	font-size: 30px;
+	font-weight: 500;
 }
 
 .product__image {
@@ -20,14 +23,68 @@
 
 .product__info {
 	grid-area: info;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: start;
 }
 
 .product__info-title {
+	font-family: 'Roboto', "Arial", sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+}
 
+.product__sub-title {
+	font-family: 'Roboto', "Arial", sans-serif;
+	margin-bottom: 30px;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 .product__text {
+	font-family: 'Roboto', "Arial", sans-serif;
+	margin-bottom: 15px;
+	font-size: 17px;
+	font-weight: 300;
+}
 
+.product__bold-text {
+	font-weight: 500;
+}
+
+.effects__list {
+	padding-left: 20px;
+}
+
+.effects__item {
+	padding: 5px 0;
+}
+
+.effects__text {
+	font-family: 'Roboto', "Arial", sans-serif;
+}
+
+.price-table {
+	table-layout: fixed;
+  border-collapse: collapse;
+	margin: 20px 0;
+}
+.price-table__row {
+}
+.price-table__title {
+	font-family: 'Roboto', "Arial", sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	padding: 5px;
+	text-align: left;
+}
+.price-table__costs {
+	font-family: 'Roboto', "Arial", sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 5px;
+	text-align: center;
 }
 
 .product__controls {
@@ -39,6 +96,7 @@
 }
 
 .product__button {
+	cursor: pointer;
 	min-width: 180px;
 	padding: 20px;
 	border: none;
