@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./source/scripts/modules/cart-icon.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/modules/cart-icon.js ***!
-  \*********************************************/
+/***/ "./source/scripts/modules/add-form.js":
+/*!********************************************!*\
+  !*** ./source/scripts/modules/add-form.js ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -13,22 +13,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "replaceCartIcon": function() { return /* binding */ replaceCartIcon; }
 /* harmony export */ });
 const replaceCartIcon = () => {
-  const cartButton = document.querySelector('.product__button');
-  let productInCart = false;
+  const cartButton = document.querySelector('.add-form__button');
+  const addForm = document.querySelector('.add-form');
+  const addFormRadioBlock = document.querySelector('.add-form__radio-wrap');
+  const addFormInputsBlock = document.querySelector('.add-form__input-wrap');
+  let formData = null;
+  let dataArray = null;
+  let productInCart = true;
+  let messageTemplate = null;
 
-  function replaceIcon(evt) {
-    evt.preventDefault();
+  const createMessage = template => {
+    const newElement = document.createElement('div');
+    newElement.innerHTML = template.trim();
+    return newElement.firstChild;
+  };
 
+  const showFormMessage = () => {
+    messageTemplate = createMessage(`
+		<p class="add-form__info">В корзине - ${dataArray.count}, товаров объёмом по - ${dataArray.size}</p>
+		`);
+    addForm.prepend(messageTemplate);
+  };
+
+  const cartButtonUpdate = () => {
     if (productInCart) {
       productInCart = false;
-      this.classList.remove('product__button--remove-from-cart');
+      cartButton.classList.remove('add-form__button--remove-from-cart');
+      addFormRadioBlock.classList.remove('add-form__radio-wrap--hidden');
+      addFormInputsBlock.classList.remove('add-form__input-wrap--hidden');
+      cartButton.textContent = 'Добавить в корзину';
+      messageTemplate !== null ? messageTemplate.remove() : null;
+      messageTemplate = null;
     } else {
       productInCart = true;
-      this.classList.add('product__button--remove-from-cart');
+      cartButton.classList.add('add-form__button--remove-from-cart');
+      addFormRadioBlock.classList.add('add-form__radio-wrap--hidden');
+      addFormInputsBlock.classList.add('add-form__input-wrap--hidden');
+      cartButton.textContent = 'Удалить из корзины';
+      showFormMessage();
     }
+  };
+
+  const checkProductStatus = () => {
+    cartButtonUpdate();
+  };
+
+  const getDataFromForm = () => {
+    formData = new FormData(addForm);
+    dataArray = {
+      size: formData.get('size'),
+      count: formData.get('count')
+    };
+    console.log(dataArray);
+  };
+
+  function shopingCurtButtonHandler(evt) {
+    evt.preventDefault();
+    !productInCart ? getDataFromForm() : null;
+    cartButtonUpdate();
   }
 
-  cartButton.addEventListener('click', replaceIcon);
+  addForm.addEventListener('submit', shopingCurtButtonHandler);
+  checkProductStatus(); // for first launch
 };
 
 
@@ -146,14 +192,14 @@ var __webpack_exports__ = {};
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobile-menu */ "./source/scripts/modules/mobile-menu.js");
-/* harmony import */ var _modules_cart_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/cart-icon */ "./source/scripts/modules/cart-icon.js");
+/* harmony import */ var _modules_add_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/add-form */ "./source/scripts/modules/add-form.js");
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_mobile_menu__WEBPACK_IMPORTED_MODULE_0__.mobileMenu)();
 
   if (document.location.pathname.indexOf('product') > -1) {
-    (0,_modules_cart_icon__WEBPACK_IMPORTED_MODULE_1__.replaceCartIcon)();
+    (0,_modules_add_form__WEBPACK_IMPORTED_MODULE_1__.replaceCartIcon)();
   } // if(document.location.pathname === '/projects.html' || document.location.pathname === '/unicorn__arhitekte/projects.html') {
   //
   // }
