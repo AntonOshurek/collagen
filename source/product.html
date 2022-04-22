@@ -114,7 +114,25 @@
 				</table>
 			</article>
 			<div class="product__controls">
-				<button class="product__button">добавить в корзину</button>
+				<form class="add-form" action="#">
+					<div class="add-form__radio-wrap">
+						<label class="add-form__radio-label">
+							500 Грамм
+							<input class="add-form__radio" name="size" type="radio" value="500" checked>
+						</label>
+						<label class="add-form__radio-label">
+							250 Грамм
+							<input class="add-form__radio" name="size" type="radio" value="250">
+						</label>
+					</div>
+					<div class="add-form__input-wrap">
+						<label class="add-form__num-label">
+							Количество товара:
+							<input class="add-form__num-unput" min="1" value="1" type="number">
+						</label>
+					</div>
+					<button class="add-form__button" type="submit">добавить в корзину</button>
+				</form>
 				<!-- <button class="product__button" onClick="window.open('https://telegram.me/share/url?url=https:lockalhost.index.html','sharer','status=0,toolbar=0,width=650,height=500');">Поделиться в Telegram</button> -->
 				<!-- <button class="product__button">Поделиться в VK</button> -->
 				<section class="product__socials">
